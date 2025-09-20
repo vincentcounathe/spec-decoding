@@ -1,13 +1,19 @@
-# spec-decoding — Speculative Decoding Playground
+# spec-decoding
 
-A minimal, readable implementation of **speculative decoding** vs a **greedy baseline** using GPT-2 small (draft) and GPT-2 medium (verifier). Includes benchmarks and an optional plot of latency vs output length.
+Toy repo to play with **speculative decoding** vs plain greedy decoding.  
+Draft = GPT-2 small, Verifier = GPT-2 medium. Just enough to show speedups and acceptance rates.
 
-## Why
-Speculative decoding is a hot inference acceleration trick: use a **small draft model** to propose multiple tokens, then **verify** them with a larger model in fewer passes.
+---
 
-This repo is intentionally small and practical for interviews / portfolio.
+## what this is
+- speculative decoding: small model proposes a few tokens, big model checks them in one go  
+- compare runtime vs greedy baseline  
+- logs acceptance rate + a rough quality proxy (avg log-likelihood)  
+- code is simple and hacky, but readable  
 
-## Setup
+---
+
+## install
 
 ```bash
 git clone https://github.com/vincentcounathe/spec-decoding
