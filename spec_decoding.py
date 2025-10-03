@@ -103,7 +103,7 @@ def speculative_decode(
     v_out = vmodel(input_ids=v_input_ids, attention_mask=v_attn, use_cache=True)
     v_past = v_out.past_key_values
 
-    # Draft initial cache
+    # draft initial cache
     d_out = dmodel(input_ids=d_input_ids, attention_mask=d_attn, use_cache=True)
     d_past = d_out.past_key_values
 
